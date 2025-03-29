@@ -6,6 +6,7 @@ namespace Zoo
     public partial class Auth : Form
     {
         string connStr = "server=10.80.1.98;port=3306;user=zoo;database=lik;password=293fh290fg9(#9fh";
+        //string connStr = "server=stud-mysql.sdlik.ru;port=33445;user=is_333_X;database=is_333_X_KR;password=ВАШПАРОЛЬ";
         MySqlConnection conn;
 
         public Auth()
