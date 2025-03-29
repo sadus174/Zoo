@@ -22,26 +22,26 @@ namespace Zoo
         {
             string login = textBox1.Text;
             string pswd = textBox2.Text;
-            // устанавливаем соединение с БД
+            // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј СЃРѕРµРґРёРЅРµРЅРёРµ СЃ Р‘Р”
             conn.Open();
-            // запрос
-            string sql = "SELECT COUNT(id) as 'Количество пользователей' FROM T_Users WHERE login='"+login+ "' and pswd='"+ pswd + "' and activ=1";
-            // объект для выполнения SQL-запроса
+            // Р·Р°РїСЂРѕСЃ
+            string sql = "SELECT COUNT(id) as 'РљРѕР»РёС‡РµСЃС‚РІРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№' FROM T_Users WHERE login='"+login+ "' and pswd='"+ pswd + "' and activ=1";
+            // РѕР±СЉРµРєС‚ РґР»СЏ РІС‹РїРѕР»РЅРµРЅРёСЏ SQL-Р·Р°РїСЂРѕСЃР°
             MySqlCommand command = new MySqlCommand(sql, conn);
-            // выполняем запрос и получаем ответ
+            // РІС‹РїРѕР»РЅСЏРµРј Р·Р°РїСЂРѕСЃ Рё РїРѕР»СѓС‡Р°РµРј РѕС‚РІРµС‚
             int count = Convert.ToInt32(command.ExecuteScalar().ToString());
-            // выводим ответ в консоль
+            // РІС‹РІРѕРґРёРј РѕС‚РІРµС‚ РІ РєРѕРЅСЃРѕР»СЊ
 
             if (count > 0)
             {
-                MessageBox.Show("Учётные данные верны");
+                MessageBox.Show("РЈС‡С‘С‚РЅС‹Рµ РґР°РЅРЅС‹Рµ РІРµСЂРЅС‹");
             }
             else
             {
-                MessageBox.Show("Ошибка учётных данных");
+                MessageBox.Show("РћС€РёР±РєР° СѓС‡С‘С‚РЅС‹С… РґР°РЅРЅС‹С…");
             }
 
-            // закрываем соединение с БД
+            // Р·Р°РєСЂС‹РІР°РµРј СЃРѕРµРґРёРЅРµРЅРёРµ СЃ Р‘Р”
             conn.Close();
         }
 
