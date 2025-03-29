@@ -1,4 +1,3 @@
-
 using MySql.Data.MySqlClient;
 
 namespace Zoo
@@ -7,6 +6,7 @@ namespace Zoo
     {
         string connStr = "server=10.80.1.98;port=3306;user=zoo;database=lik;password=293fh290fg9(#9fh";
         //string connStr = "server=stud-mysql.sdlik.ru;port=33445;user=is_333_X;database=is_333_X_KR;password=ВАШПАРОЛЬ";
+
         MySqlConnection conn;
 
         public Auth()
@@ -23,28 +23,39 @@ namespace Zoo
         {
             string login = textBox1.Text;
             string pswd = textBox2.Text;
-            // устанавливаем соединение с БД
-            conn.Open();
-            // запрос
-            string sql = "SELECT COUNT(id) as 'Количество пользователей' FROM T_Users WHERE login='"+login+ "' and pswd='"+ pswd + "' and activ=1";
-            // объект для выполнения SQL-запроса
-            MySqlCommand command = new MySqlCommand(sql, conn);
-            // выполняем запрос и получаем ответ
-            int count = Convert.ToInt32(command.ExecuteScalar().ToString());
-            // выводим ответ в консоль
 
-            if (count > 0)
+            try
             {
-                MessageBox.Show("Учётные данные верны");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Ошибка учётных данных");
-            }
+                conn.Open();
 
-            // закрываем соединение с БД
-            conn.Close();
+                // Используем параметризованный запрос
+                string sql = "SELECT COUNT(id) FROM T_Users WHERE login = @login AND pswd = @pswd AND activ = 1";
+                // Создаём команду
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                // Инициализируем (добавляем) параметры в запрос
+                command.Parameters.AddWithValue("@login", login);
+                command.Parameters.AddWithValue("@pswd", pswd);
+
+                int count = Convert.ToInt32(command.ExecuteScalar());
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Учётные данные верны");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка учётных данных");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка подключения к базе данных: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
