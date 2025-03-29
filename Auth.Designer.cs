@@ -1,6 +1,6 @@
 ﻿namespace Zoo
 {
-    partial class Form1
+    partial class Auth
     {
         /// <summary>
         ///  Required designer variable.
@@ -36,7 +36,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(294, 275);
+            button1.Location = new Point(12, 70);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(424, 275);
+            button2.Location = new Point(150, 70);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 1;
@@ -56,29 +56,31 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(329, 88);
+            textBox1.Location = new Point(12, 12);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
+            textBox1.Size = new Size(213, 23);
             textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(331, 134);
+            textBox2.Location = new Point(12, 41);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
+            textBox2.Size = new Size(213, 23);
             textBox2.TabIndex = 3;
             // 
-            // Form1
+            // Auth
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(232, 105);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(button2);
             Controls.Add(button1);
-            Name = "Form1";
+            Name = "Auth";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Зоопарк - Подажа билетов";
+            TopMost = true;
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

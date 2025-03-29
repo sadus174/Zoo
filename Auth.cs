@@ -3,12 +3,12 @@ using MySql.Data.MySqlClient;
 
 namespace Zoo
 {
-    public partial class Form1 : Form
+    public partial class Auth : Form
     {
         string connStr = "server=10.80.1.98;port=3306;user=zoo;database=lik;password=293fh290fg9(#9fh";
         MySqlConnection conn;
 
-        public Form1()
+        public Auth()
         {
             InitializeComponent();
         }
@@ -35,6 +35,7 @@ namespace Zoo
             if (count > 0)
             {
                 MessageBox.Show("Учётные данные верны");
+                this.Close();
             }
             else
             {
@@ -47,7 +48,7 @@ namespace Zoo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            conn.Close();
+            Application.Exit();
         }
     }
 }
