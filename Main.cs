@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +20,21 @@ namespace Zoo
 
         private void Main_Load(object sender, EventArgs e)
         {
-            this.Hide();
-            Auth auth = new Auth();
-            auth.ShowDialog();
+            //this.Hide();
+            //Auth auth = new Auth();
+            //auth.ShowDialog();
+        }
+               
+
+        private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sprav.Employs employs = new Sprav.Employs();
+            employs.ShowDialog();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
