@@ -55,9 +55,9 @@
             // 
             toolStrip1.Dock = DockStyle.Bottom;
             toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripLabel1, toolStripLabel2, toolStripSeparator1, toolStripLabel3, toolStripLabel4 });
-            toolStrip1.Location = new Point(0, 865);
+            toolStrip1.Location = new Point(0, 586);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(1301, 25);
+            toolStrip1.Size = new Size(927, 25);
             toolStrip1.TabIndex = 1;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -102,11 +102,11 @@
             tableLayoutPanel1.Controls.Add(btnDelete, 4, 0);
             tableLayoutPanel1.Controls.Add(btnEdit, 2, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(23, 821);
+            tableLayoutPanel1.Location = new Point(23, 542);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1255, 41);
+            tableLayoutPanel1.Size = new Size(881, 41);
             tableLayoutPanel1.TabIndex = 5;
             // 
             // btnAdd
@@ -114,30 +114,33 @@
             btnAdd.Dock = DockStyle.Fill;
             btnAdd.Location = new Point(3, 3);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(399, 35);
+            btnAdd.Size = new Size(274, 35);
             btnAdd.TabIndex = 3;
             btnAdd.Text = "Добавить";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += BtnAdd_Click;
             // 
             // btnDelete
             // 
             btnDelete.Dock = DockStyle.Fill;
-            btnDelete.Location = new Point(853, 3);
+            btnDelete.Location = new Point(603, 3);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(399, 35);
+            btnDelete.Size = new Size(275, 35);
             btnDelete.TabIndex = 6;
             btnDelete.Text = "Удалить";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += BtnDelete_Click;
             // 
             // btnEdit
             // 
             btnEdit.Dock = DockStyle.Fill;
-            btnEdit.Location = new Point(428, 3);
+            btnEdit.Location = new Point(303, 3);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(399, 35);
+            btnEdit.Size = new Size(274, 35);
             btnEdit.TabIndex = 4;
             btnEdit.Text = "Изменить";
             btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += BtnEdit_Click;
             // 
             // tableLayoutPanel2
             // 
@@ -153,7 +156,7 @@
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 47F));
-            tableLayoutPanel2.Size = new Size(1301, 865);
+            tableLayoutPanel2.Size = new Size(927, 586);
             tableLayoutPanel2.TabIndex = 6;
             // 
             // dataGridView1
@@ -166,7 +169,7 @@
             dataGridView1.GridColor = Color.White;
             dataGridView1.Location = new Point(23, 3);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1255, 812);
+            dataGridView1.Size = new Size(881, 533);
             dataGridView1.TabIndex = 1;
             dataGridView1.MouseDown += dataGridView1_MouseDown;
             // 
@@ -174,19 +177,19 @@
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { Удалить, Изменить });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(181, 70);
+            contextMenuStrip1.Size = new Size(129, 48);
             // 
             // Удалить
             // 
             Удалить.Name = "Удалить";
-            Удалить.Size = new Size(180, 22);
+            Удалить.Size = new Size(128, 22);
             Удалить.Text = "Удалить";
             Удалить.Click += Удалить_Click;
             // 
             // Изменить
             // 
             Изменить.Name = "Изменить";
-            Изменить.Size = new Size(180, 22);
+            Изменить.Size = new Size(128, 22);
             Изменить.Text = "Изменить";
             Изменить.Click += Изменить_Click;
             // 
@@ -195,7 +198,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1301, 890);
+            ClientSize = new Size(927, 611);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(toolStrip1);
             Name = "Employs";

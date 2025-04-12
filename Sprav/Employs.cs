@@ -29,7 +29,6 @@ namespace Zoo.Sprav
         //что бы в БД не отправлялся null
         string id_selected_rows = "0";
         //Строка подключения
-        string connStr = "server=10.80.1.98;port=3306;user=zoo;database=lik;password=293fh290fg9(#9fh";
 
         public void GetListUsers()
         {
@@ -155,15 +154,17 @@ namespace Zoo.Sprav
         {
             InitializeComponent();
         }
-
+        
         private void BtnAdd_Click(object sender, EventArgs e) => AddUser();
+        
         private void BtnEdit_Click(object sender, EventArgs e) => EditUser();
+        
         private void BtnDelete_Click(object sender, EventArgs e) => DeleteUser();
-
+        
         private void Employs_Load(object sender, EventArgs e)
         {
             // Создание подключения к БД
-            conn = new MySqlConnection(connStr);
+            conn = new MySqlConnection(Setting.server);
 
             // Заполнение DataGridView данными из БД
             GetListUsers();
@@ -188,7 +189,7 @@ namespace Zoo.Sprav
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
         }
-
+        
         private void dataGridView1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right || e.Button == MouseButtons.Left)
@@ -209,12 +210,12 @@ namespace Zoo.Sprav
                 }
             }
         }
-
+        
         private void Удалить_Click(object sender, EventArgs e)
         {
             DeleteUser();
         }
-
+        
         private void Изменить_Click(object sender, EventArgs e)
         {
             EditUser();
