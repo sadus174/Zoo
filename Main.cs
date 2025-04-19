@@ -23,6 +23,9 @@ namespace Zoo
             //this.Hide();
             //Auth auth = new Auth();
             //auth.ShowDialog();
+
+            AuthClass.Fio = "Пупкин И.И.";
+            toolStripStatusLabel2.Text = AuthClass.Fio;
         }
                
 

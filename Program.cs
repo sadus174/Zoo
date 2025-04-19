@@ -22,6 +22,6 @@ namespace Zoo
 
     public static class AuthClass
     {
-        public static string fio;        
+        public static string Fio;        
     }
 }

@@ -42,7 +42,7 @@ namespace Zoo
                 if (count > 0)
                 {
                     MessageBox.Show("Учётные данные верны");
-                    AuthClass.fio = textBox1.Text;
+                    AuthClass.Fio = textBox1.Text;
                     this.Close();
                 }
                 else
